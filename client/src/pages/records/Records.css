@@ -1,0 +1,89 @@
+.records {
+  width: 100vw;
+  background: linear-gradient(to right, #365575, #3678bb, #365575);
+  padding-top: 70px;
+}
+
+.records__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(140vh + 100px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 10vh;
+  background-color: rgb(236, 236, 236);
+}
+
+.records__content > .MuiTextField-root {
+  align-self: flex-start;
+  margin: 20px 0;
+  margin-left: 2.5vw;
+  width: 90vw;
+  max-width: 400px;
+}
+
+.records__list {
+  width: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.records__illustration {
+  position: absolute;
+  left: 0;
+  bottom: calc(-55vh - 100px);
+  width: 100vw;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.records__shapeDivider {
+  position: absolute;
+  bottom: 0;
+  bottom: calc(-55vh - 85px);
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: 2;
+}
+
+.records__shapeDivider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 65px;
+}
+
+.records__shapeDivider .shape-fill {
+  fill: #0a1f36;
+}
+
+@media only screen and (max-width: 900px) {
+  .records__content > .MuiTextField-root {
+    margin-left: 5vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .records {
+    padding-top: 65px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .records {
+    padding-top: 75px;
+  }
+  .records__shapeDivider {
+    bottom: calc(-55vh - 105px);
+  }
+}
+
+@media only screen and (max-height: 550px) {
+  .records__shapeDivider {
+    bottom: calc(-55vh - 125px);
+  }
+}

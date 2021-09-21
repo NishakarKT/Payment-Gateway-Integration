@@ -1,0 +1,69 @@
+.transaction {
+  width: 90vw;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.transaction > .MuiTextField-root {
+  width: 100%;
+  animation: transaction__appear 1s ease-out 1 forwards;
+}
+
+.transaction__buttons {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  animation: transaction__appear 1s ease-out 0.5s 1 forwards;
+}
+
+.transaction__buttons .MuiButton-root {
+  margin: 20px 5px;
+  font-size: 16px;
+  padding: 5px 20px;
+  text-transform: none;
+  color: white;
+  background-color: #3678bb;
+  transition: all 0.5s;
+}
+
+.transaction__buttons .MuiButton-root:hover {
+  filter: brightness(80%);
+  background-color: #3678bb;
+}
+
+.transaction__buttons .MuiButton-root:focus {
+  transform: scale(1.1) translateY(5px);
+  background-color: teal;
+  animation: transaction__buttonClick 0.5s linear 1;
+}
+
+.transaction__buttons .MuiButton-root:active {
+  animation: none;
+}
+
+@keyframes transaction__buttonClick {
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes transaction__appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

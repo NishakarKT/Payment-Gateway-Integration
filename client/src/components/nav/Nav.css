@@ -1,0 +1,232 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 3;
+}
+
+.nav__scrollToTopBtn {
+  position: fixed !important;
+  color: white !important;
+  background: linear-gradient(#dd9c0c, #fe38aa);
+  /* background-color: white !important; */
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10 !important;
+  transition: all 0.5s !important;
+  border: 2px solid white !important;
+  animation: nav__buttonDefault 1.5s linear infinite;
+}
+
+.nav__scrollToTopBtn > .MuiSvgIcon-root {
+  font-size: 30px;
+}
+
+.nav__scrollToTopBtn:hover {
+  background-color: white !important;
+}
+
+.nav__scrollToTopBtn:focus {
+  animation: nav__buttonClick 0.5s linear 1,
+    nav__buttonDefault 1.5s linear infinite;
+}
+
+.nav__scrollToTopBtn:active {
+  animation: none;
+}
+
+.nav__scrolled {
+  background-color: rgb(10, 31, 54, 0.9);
+}
+
+.nav__left {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.nav__left > img {
+  object-fit: contain;
+  width: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.nav__left > span {
+  color: white;
+  font-size: 30px;
+  transition: all 0.5s;
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.nav__right > .MuiButton-root {
+  background-color: white;
+  font-size: 15px;
+  text-transform: none;
+  margin-left: 10px;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.nav__right > .MuiButton-root:hover {
+  filter: brightness(90%);
+  transform: translateY(3px);
+  background-color: white;
+}
+
+.nav__link {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  padding: 25px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.nav__linkLi {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  color: #757575;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.nav__link:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav__linkActive {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav__linkActive:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav__menu {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.nav__menuItem {
+  display: flex;
+  color: #36577a;
+  font-size: 15x;
+  font-weight: 600;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  padding-right: 50px;
+  transition: all 0.5s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav__menuItemActive {
+  background-color: #d4e7fc;
+}
+
+.nav__menuItem:hover {
+  background-color: #e4f1ff;
+}
+
+.nav__menuItemActive:hover {
+  background-color: #b9d8fc;
+}
+
+.nav__menuItem > .MuiAvatar-root {
+  margin-right: 10px;
+}
+
+.nav__menuItem > .MuiSvgIcon-root {
+  margin-right: 10px;
+}
+
+.nav__res {
+  display: none !important;
+  margin-right: 20px;
+}
+
+.nav__res > .MuiSvgIcon-root {
+  font-size: 40px;
+  color: white;
+}
+
+@keyframes nav__buttonDefault {
+  25% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes nav__buttonClick {
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes nav__menuAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes nav__menuDisappear {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .nav__res {
+    display: inline !important;
+  }
+  .nav__right {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .nav__menu {
+    display: none !important;
+  }
+}

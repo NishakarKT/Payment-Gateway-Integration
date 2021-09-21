@@ -1,0 +1,90 @@
+body {
+  overflow: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 2;
+  padding: 10px;
+}
+
+.nav__left {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.nav__left > img {
+  object-fit: contain;
+  width: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.nav__left > span {
+  color: white;
+  font-size: 30px;
+  transition: all 0.5s;
+}
+
+.donate__bg {
+  position: fixed;
+  top: -10px;
+  left: 0;
+  height: calc(100vh + 20px);
+  width: 100vw;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.3);
+}
+
+.donate__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  font-family: "Roboto";
+}
+
+.donate__box > h1 {
+  font-size: 40px;
+  margin-bottom: 0px !important;
+  width: 90vw;
+  max-width: 800px;
+  opacity: 0;
+  animation: donate__apppear 0.5s ease-out 1s 1 forwards;
+}
+
+.donate__box > h2 {
+  font-size: 20px;
+  margin-bottom: 15px !important;
+  width: 90vw;
+  max-width: 800px;
+  opacity: 0;
+  animation: donate__apppear 0.5s ease-out 1.1s 1 forwards;
+}
+
+@keyframes donate__apppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

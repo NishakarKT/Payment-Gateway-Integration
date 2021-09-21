@@ -1,0 +1,369 @@
+.user {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  user-select: none;
+}
+
+.user__modeBtn {
+  position: fixed;
+  top: 10px;
+  transition: all 1s;
+  transition-delay: 0.5s;
+}
+
+.user__modeBtn_signIn {
+  right: 10px;
+}
+
+.user__modeBtn_signUp {
+  right: calc(100vw - 75px);
+}
+
+.user__modeBtn > .MuiButton-root {
+  color: white;
+  background-color: #1976d2;
+  border-radius: 3px;
+  text-transform: none;
+  transition: all 0.5s;
+}
+
+.user__modeBtn > .MuiButton-root:hover {
+  transform: translateY(3px);
+  filter: brightness(90%);
+  background-color: #1976d2;
+}
+
+.user__modeBtn > .MuiButton-root:focus {
+  animation: user__buttonClick 0.5s linear 1;
+}
+
+.user__modeBtn > .MuiButton-root:active {
+  animation: none;
+}
+
+.user__intro {
+  position: fixed;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 1s;
+  transition-delay: 0.5s;
+  z-index: 1;
+}
+
+.user__intro_signIn {
+  left: 10px;
+}
+
+.user__intro_signUp {
+  left: calc(55vw);
+}
+
+.user__title {
+  display: flex;
+  align-items: center;
+}
+
+.user__title > img {
+  object-fit: contain;
+  width: 40px;
+  cursor: pointer;
+}
+
+.user__content {
+  width: 40vw;
+  max-width: 500px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+}
+
+.user__content > .MuiButton-root {
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #1976d2;
+  background-color: white;
+  padding: 3px 10px;
+  text-transform: none;
+  transition: all 0.5s;
+}
+
+.user__content > .MuiButton-root:hover {
+  filter: brightness(90%);
+  background-color: white;
+}
+
+.user__content > .MuiButton-root:focus {
+  animation: user__buttonClick 0.5s linear 1;
+}
+
+.user__content > .MuiButton-root:active {
+  animation: none;
+}
+
+.user__title > span {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin-left: 10px;
+}
+
+.user__illustration {
+  position: fixed;
+  object-fit: contain;
+  width: 600px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.user__bgShape {
+  position: fixed;
+  top: -55vw;
+  width: 150vw;
+  height: 150vw;
+  border-radius: 50%;
+  background-color: #1976d2;
+  transition: all 2s;
+  animation: user__bgShapeAppear 1.5s ease-out 1;
+}
+
+.user__bgShape_signIn {
+  left: -100vw;
+}
+
+.user__bgShape_signUp {
+  left: 50vw;
+}
+
+.user__inputs {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+}
+
+.user__inputs .MuiTextField-root {
+  opacity: 0;
+  margin-bottom: 10px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.user__signIn,
+.user__signUp {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user__signIn {
+  margin-left: auto;
+}
+
+.user__signIn > .MuiButton-root,
+.user__signUp > .MuiButton-root {
+  opacity: 0;
+  color: white;
+  background-color: #1976d2;
+  font-size: 16px;
+  width: 30%;
+  min-width: fit-content;
+  padding: 5px 20px;
+  margin-top: 5px;
+  transition: all 0.5s;
+  text-transform: none;
+  animation: "user__inputsAppear 2 linear 2s 1 forwards";
+}
+
+.user__signUp > .MuiButton-root {
+  background-color: #1976d2;
+}
+
+.user__signIn > .MuiButton-root:hover,
+.user__signUp > .MuiButton-root:hover {
+  filter: brightness(90%);
+  background-color: #1976d2;
+}
+
+.user__contact {
+  opacity: 0;
+  margin-top: 5px;
+}
+
+.user__contact > .MuiIconButton-root {
+  transition: all 0.5s;
+  padding: 5px;
+}
+
+.user__contact > .MuiIconButton-root:hover {
+  filter: brightness(90%);
+  transform: translateY(5px);
+}
+
+.user__contact .MuiSvgIcon-root {
+  font-size: 40px;
+}
+
+.user__errorMsg {
+  font-weight: 500;
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+  width: 80vw;
+  max-width: 300px;
+}
+
+/* animations */
+@keyframes user__buttonClick {
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes user__illustrationAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes user__illustrationDisappear {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes user__buttonClick {
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes user__bgShapeAppear {
+  from {
+    transform: translateX(-120vh) translateY(120vh);
+  }
+}
+
+@keyframes signIn__inputsAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes signUp__inputsAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Media queries */
+@media only screen and (max-width: 1200px) {
+  .user__illustration {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .user__signUp {
+    width: calc(50vw - 60px);
+    margin-left: 60px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .user__illustration {
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .user__bgShape {
+    display: none;
+  }
+  .user__intro {
+    position: relative !important;
+    top: 20px;
+    left: 0;
+  }
+  .user__title > span {
+    color: #fe4f8f;
+    font-size: 25px;
+  }
+  .user__content {
+    display: none;
+  }
+  .user__illustration {
+    display: none;
+  }
+  .user__signIn,
+  .user__signUp {
+    flex: 1;
+    margin: 30px 0;
+  }
+  .user__intro_signIn {
+    animation: signIn__inputsAppear 1s linear 1 !important;
+  }
+  .user__intro_signUp {
+    animation: signUp__inputsAppear 1s linear 1 !important;
+  }
+  .user__modeBtn {
+    top: calc(100vh - 45px);
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .user__bgShape {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 360px) {
+  .user__bgShape {
+    display: none;
+  }
+  .user__title > span {
+    color: #fe4f8f;
+  }
+  .user__content {
+    font-weight: 500;
+    color: #166abd;
+  }
+  .user__content > .MuiButton-root {
+    color: white;
+    background-color: #1976d2;
+  }
+}

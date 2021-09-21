@@ -1,0 +1,88 @@
+.transactions {
+  width: 100vw;
+  background: linear-gradient(to right, #365575, #3678bb, #365575);
+  padding-top: 70px;
+}
+
+.transactions__content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh + 180px);
+  background-color: rgb(236, 236, 236);
+  padding-top: 30px;
+}
+
+.transactions__steppers {
+  align-self: center;
+}
+
+.transactions__steppers > .MuiButton-root {
+  margin: 20px 5px;
+  font-size: 16px;
+  padding: 5px 20px;
+  text-transform: none;
+  color: white;
+  background-color: #3678bb;
+  transition: all 0.5s;
+}
+
+.transactions__steppers > .MuiButton-root:hover {
+  filter: brightness(80%);
+  background-color: #3678bb;
+}
+
+.transactions__steppers > .MuiButton-root:focus {
+  animation: transactions__buttonClick 0.5s linear 1;
+}
+
+.transactions__steppers > .MuiButton-root:active {
+  animation: none;
+}
+
+.transactions__shapeDivider {
+  position: absolute;
+  bottom: -250px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.transactions__shapeDivider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 65px;
+}
+
+.transactions__shapeDivider .shape-fill {
+  fill: #0a1f36;
+}
+
+@keyframes transactions__buttonClick {
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .transactions {
+    padding-top: 65px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .transactions {
+    padding-top: 75px;
+  }
+  .transactions__shapeDivider {
+    bottom: -260px;
+  }
+}

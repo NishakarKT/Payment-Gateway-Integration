@@ -1,0 +1,123 @@
+.error404 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  background: linear-gradient(135deg, #45a3fa, #b2f0eb);
+  user-select: none;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.error404__illustration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80vw;
+  max-width: 450px;
+  object-fit: contain;
+  transition: all 0.5s;
+  animation: error404__float 12s linear infinite;
+}
+
+.error404__content {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 10px;
+}
+
+.error404__content > h1 {
+  font-size: 40px;
+}
+
+.error404__content > h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.error404__content > h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.error404__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.error404__buttons > .MuiButton-root {
+  max-width: 120px;
+  color: white;
+  background-color: #2e00d4;
+  font-size: 18px;
+  text-transform: none;
+  padding: 5px 15px;
+  margin-right: 5px;
+  transition: all 0.5s;
+}
+
+.error404__buttons > .MuiButton-root:hover {
+  background-color: #2e00d4;
+  filter: brightness(110%);
+  transform: scale(1.02) translateY(2px);
+}
+
+.error404__buttons > .MuiButton-root .MuiSvgIcon-root {
+  font-size: 25px;
+  margin-right: 2px;
+}
+
+@media only screen and (max-width: 660px) {
+  .error404 {
+    display: flex;
+    justify-content: center;
+  }
+  .error404__content {
+    text-align: center;
+    align-items: center;
+  }
+  .error404__content > h1 {
+    font-size: 30px;
+  }
+
+  .error404__content > h2 {
+    font-size: 15px;
+  }
+
+  .error404__content > h3 {
+    font-size: 13px;
+  }
+
+  .error404__illustration {
+    max-width: 350px;
+    min-width: 200px;
+  }
+}
+
+@media only screen and (max-width: 220px) {
+  .error404__content > h1 {
+    font-size: 20px;
+  }
+  .error404__buttons {
+    flex-direction: column;
+  }
+  .error404__buttons > .MuiButton-root {
+    width: 80vw;
+    margin: 5px;
+  }
+}
+
+@keyframes error404__float {
+  25% {
+    transform: translateX(10px) translateY(-5px) rotate(2deg);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateX(-10px) translateY(5px) rotate(-1deg);
+  }
+}
